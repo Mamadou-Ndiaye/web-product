@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Computer",
+      "price": 750000,
+      "checked": true
+    },
+    {
+      "id": 3,
+      "name": "Phone",
+      "price": 375000,
+      "checked": true
+    },
+    {
+      "name": "smart phone",
+      "price": "360000",
+      "checked": true,
+      "id": 4
+    },
+    {
+      "name": "iphone",
+      "price": "400000",
+      "checked": false,
+      "id": 5
+    },
+    {
+      "name": "Chemise",
+      "price": "5000",
+      "checked": true,
+      "id": 6
+    },
+    {
+      "name": "Villaon",
+      "price": "3500",
+      "checked": true,
+      "id": 7
+    },
+    {
+      "name": "Lacoste",
+      "price": "3000",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "name": "jeam",
+      "price": "5500",
+      "checked": true,
+      "id": 10
+    },
+    {
+      "name": "ffdsdfg",
+      "price": "432",
+      "checked": false,
+      "id": 11
+    },
+    {
+      "name": "fd",
+      "price": "765",
+      "checked": false,
+      "id": 12
+    }
+  ]
+}
