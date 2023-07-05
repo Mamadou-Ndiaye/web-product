@@ -35,9 +35,9 @@ export class ProductComponent  implements  OnInit{
   }
 
   searchProduct(){
-    this.appState.setProductState({
+    /*this.appState.setProductState({
      status:"LOADING"
-    })
+    })*/
     this.productService.searchProducts(this.appState.productState.keyword, this.appState.productState.currentPage , this.appState.productState.size).subscribe({
       next : response => {
             let products = response.body;
