@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, computed, signal} from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
+  counter = signal(0);
+  doubleCounter = computed(() => this.counter() * 2);
+
+  increment(){
+    this.counter.update((value)=>value+1);
+  }
+  decrement(){
+    this.counter.update((value)=>value-1);
+  }
 
 }

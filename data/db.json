@@ -4,61 +4,142 @@
       "id": 1,
       "name": "Computer",
       "price": 750000,
+      "promo": false,
       "checked": true
     },
     {
       "id": 3,
       "name": "Phone",
       "price": 375000,
-      "checked": true
+      "promo": true,
+      "checked": false
     },
     {
       "name": "smart phone",
       "price": "360000",
       "checked": true,
+      "promo": false,
       "id": 4
     },
     {
       "name": "iphone",
       "price": "400000",
       "checked": false,
+      "promo": true,
       "id": 5
     },
     {
       "name": "Chemise",
       "price": "5000",
       "checked": true,
+      "promo": false,
       "id": 6
     },
     {
       "name": "Villaon",
       "price": "3500",
       "checked": true,
+      "promo": true,
       "id": 7
     },
     {
       "name": "Lacoste",
       "price": "3000",
       "checked": true,
+      "promo": false,
       "id": 9
     },
     {
-      "name": "jeam",
+      "name": "jean",
       "price": "5500",
       "checked": true,
+      "promo": true,
       "id": 10
     },
     {
-      "name": "ffdsdfg",
-      "price": "432",
+      "name": "mdf",
+      "price": "124",
       "checked": false,
+      "promo": true,
       "id": 11
     },
     {
-      "name": "fd",
-      "price": "765",
+      "name": "vscode",
+      "price": "4250",
       "checked": false,
+      "promo": false,
       "id": 12
+    },
+    {
+      "name": "aahgd",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 13
+    }, {
+      "name": "microsoft",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 14
+    }, {
+      "name": "teams",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 15
+    }, {
+      "name": "clavier",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 16
+    }, {
+      "name": "souris",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 16
+    }, {
+      "name": "talette",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 17
+    }, {
+      "name": "jean",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 18
+    }, {
+      "name": "lacoste",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 19
+    }, {
+      "name": "montre",
+      "price": "4250",
+      "checked": false,
+      "promo": false,
+      "id": 12
+    }
+  ],
+  "users": [
+    {
+      "id": "user1",
+      "username": "modou",
+      "password": "MTIzNA==",
+      "roles": ["USER"],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1vZG91IiwiaWF0IjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODkiLCJuYmYiOjE1MTYyMzkwMjIsImZpcnN0bmFtZSI6Im1vZG91IiwibGFzdG5hbWUiOiJuZGlheWUiLCJyb2xlcyI6WyJVU0VSIl19.8LUuR56k4fge9xgd0pQ-y6uzIuaN1UeBPkn4hriq2_Y"
+    },
+    {
+      "id": "admin",
+      "username": "Mamamdou",
+      "password": "MTIzNA==",
+      "roles": ["USER","ADMIN"],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6Im1hbWFkb3UiLCJpYXQiOjE1MTYyMzkwMjIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4OSIsIm5iZiI6MTUxNjIzOTAyMiwiZmlyc3RuYW1lIjoiTWFtYWRvdSIsImxhc3RuYW1lIjoibmRpYXllIiwicm9sZXMiOlsiVVNFUiIsIkFETUlOIl19.PDZBm1h4CY3sZ-e5-s4t_WtfmcnB_DyOCfu8e_NsFBE"
     }
   ]
 }

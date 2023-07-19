@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, computed, OnInit, signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {ProductService} from "../services/product.service";
 import {Product} from "../model/product";
@@ -27,6 +27,9 @@ export class ProductComponent  implements  OnInit{
   totalPages!: number;
 */
 
+
+
+
   constructor(private  productService: ProductService, private  router: Router, public  appState : AppStateService) {
   }
 
@@ -38,12 +41,14 @@ export class ProductComponent  implements  OnInit{
     /*this.appState.setProductState({
      status:"LOADING"
     })*/
-    this.productService.searchProducts(this.appState.productState.keyword, this.appState.productState.currentPage , this.appState.productState.size).subscribe({
+
+    this.productService.searchProducts(this.appState.productState.keyword, this.appState.productState.currentPage, this.appState.productState.size).subscribe({
       next : response => {
-            let products = response.body;
-             let totalCount : number =  parseInt(response.headers.get('X-Total-Count')!)
-             let totalPages : number =Math.floor( totalCount/this.appState.productState.size);
-           if(totalCount % this.appState.productState.size !=0) this.appState.setProductState({totalPages:++this.appState.productState.totalPages  })
+
+        let products = response.body;
+             let totalCount : number =  parseInt(response.headers.get('X-Total-Count')!);
+        let totalPages : number =Math.floor( totalCount/this.appState.productState.size)
+           if(totalCount % this.appState.productState.size !=0) ++totalPages
 
             this.appState.setProductState({
               products: products,
@@ -66,6 +71,13 @@ export class ProductComponent  implements  OnInit{
         error : err => console.log(err)
       })
       //product.checked =!product.checked;
+  }
+  handleSetProduct(product: any) {
+
+    this.productService.setPromoProduct(product).subscribe({
+      next :  data =>  product.promo =! product.promo,
+      error : err => console.log(err)
+    })
   }
 
   handleDeleteProduct(product: Product) : void {
@@ -94,6 +106,8 @@ export class ProductComponent  implements  OnInit{
   }
 
   handleEditProduct(product: Product) {
-    this.router.navigateByUrl(`/edit-product/${product.id}`);
+    this.router.navigateByUrl(`/admin/edit-product/${product.id}`);
   }
+
+
 }

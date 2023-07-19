@@ -14,21 +14,30 @@
         <table class="table">
             <thead>
               <tr>
-                 <th>Name</th> <th>Price</th> <th>Checked</th>
+                 <th>Name</th> <th>Price</th><th>Promo</th><th>Set Promo</th> <th>Checked</th>
               </tr>
             </thead>
           <tbody>
                <tr  *ngFor="let product of this.appState.productState.products">
                  <td>{{product.name}}</td>
                   <td>{{product.price}}</td>
+                 <td>
+                   <i class=" bi bi-heart-fill text-success" *ngIf="product.promo" ></i>
+                 </td>
+                 <td><button  [ngClass]="product.promo ? 'btn btn-outline-danger': 'bi btn-outline-success' " (click)="handleSetProduct(product)"  class="btn btn-outline-success">
+                   <span *ngIf="product.promo">Promo On</span>
+                   <span *ngIf="product.promo==false">Promo Off</span>
+                 </button></td>
                   <td><button  (click)="handleCheckProduct(product)"  class="btn btn-outline-success">
                      <i [class]="product.checked ? 'bi bi-check': 'bi bi-circle' " ></i>
                   </button></td>
 
-                 <td><button  (click)="handleDeleteProduct(product)"  class="btn btn-outline-danger">
+                 <td  *ngIf="appState.authState.roles.includes('ADMIN')">
+                   <button  (click)="handleDeleteProduct(product)"  class="btn btn-outline-danger">
                    <i class=" bi bi-trash " ></i>
                  </button></td>
-                 <td><button  (click)="handleEditProduct(product)"  class="btn btn-outline-warning">
+                 <td  *ngIf="appState.authState.roles.includes('ADMIN')">
+                   <button  (click)="handleEditProduct(product)"  class="btn btn-outline-warning">
                    <i class=" bi bi-pencil " ></i>
                  </button></td>
                </tr>

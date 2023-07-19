@@ -19,6 +19,10 @@ export class ProductService {
   checkedProduct(product: Product) : Observable<Product>{
     return this.http.patch<Product>(this.baseUrl+"/products/" + product.id, {checked: product.checked});
   }
+
+  setPromoProduct(product: Product) : Observable<Product>{
+    return this.http.patch<Product>(this.baseUrl+"/products/" + product.id, {promo: product.promo});
+  }
   deleteProduct(product: Product){
      return this.http.delete(this.baseUrl+"/products/" + product.id);
   }

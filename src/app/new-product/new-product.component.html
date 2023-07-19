@@ -7,17 +7,26 @@
               <div class="mb-3">
                 <label class="form-label">Name</label>
                 <input type="text" class="form-control" formControlName="name">
+                <small *ngIf="productForm.controls['name'].errors && productForm.controls['name'].touched" class="text-danger">
+                    {{getErrorMessage('Name',productForm.controls['name'].errors)}}
+                </small>
               </div>
               <div class="mb-3">
                 <label class="form-label">Price</label>
                 <input type="text" class="form-control" formControlName="price">
+                <small *ngIf="productForm.controls['price'].errors && productForm.controls['price'].touched" class="text-danger">
+                  {{getErrorMessage('Price',productForm.controls['price'].errors)}}
+                </small>
               </div>
               <div class="mb-3">
                 <label class="form-label ms-1">Checked</label>
                 <input type="checkbox" class="form-check-input m-1" formControlName="checked">
               </div>
+              <div class="mb-3">
+                <input type="hidden" class="form-check-input m-1" formControlName="promo">
+              </div>
 
-              <button class="btn btn-success">Save<i class="bi bi-save"></i></button>
+              <button class="btn btn-success" [disabled]="productForm.invalid">Save<i class="bi bi-save"></i></button>
             </form>
           </div>
         </div>

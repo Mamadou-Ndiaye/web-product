@@ -17,18 +17,20 @@ export class EditProductComponent  implements OnInit{
   product!: Product;
 
   constructor(private fb: FormBuilder, private  activatedRoute: ActivatedRoute, private productService: ProductService) {
-
+    this.productId = this.activatedRoute.snapshot.params["id"];
   }
   ngOnInit(): void {
-    this.productId = this.activatedRoute.snapshot.params["id"];
+
      //this.product = this.findProductById(this.productId);
     this.productService.findProductById(this.productId).subscribe({
       next : (product) => {
+        this.product=product;
+        console.log(this.product)
         this.productForm = this.fb.group({
           id:this.fb.control(this.productId),
-        name:this.fb.control(product.name, [Validators.required]),
-        price:this.fb.control(product.price,[Validators.min(100)]),
-        checked:this.fb.control(product.checked)
+        name:this.fb.control(this.product.name, [Validators.required]),
+        price:this.fb.control(this.product.price,[Validators.min(100)]),
+        checked:this.fb.control(this.product.checked)
 
       })},
       error : err => { console.log(err)}

@@ -1,5 +1,16 @@
-<div>
+<div class="p-3">
   <div class="card">
-      <div class="card-body"> <h2>Home component</h2></div>
+        <div class="card-body">
+          <div class="col-md-6">
+            <div class="label-control">Counter:{{counter()}}</div>
+            <div class="label-control">Double:{{doubleCounter()}}</div>
+            <button class="btn btn-outline-success m-1" (click)="increment()">
+              increment
+            </button>
+            <button class="btn btn-outline-danger m-1" (click)="decrement()">
+              decrement
+            </button>
+          </div>
+      </div>
   </div>
 </div>

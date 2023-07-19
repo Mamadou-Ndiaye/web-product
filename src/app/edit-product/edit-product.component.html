@@ -6,6 +6,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-6" *ngIf="productForm">
+          <h2> Product  Name: {{productForm.value | json}}</h2>
           <form [formGroup]="productForm" (ngSubmit)="editProduct()">
             <div class="mb-3">
               <label class="form-label">Name</label>

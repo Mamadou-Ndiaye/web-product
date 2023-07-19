@@ -4,4 +4,5 @@ export interface Product {
   name: string
   price: number
   checked: boolean
+  promo: boolean
 }
